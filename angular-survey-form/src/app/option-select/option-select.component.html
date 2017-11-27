@@ -1,0 +1,5 @@
+<select id="dropdown" (change)="removeOption()">
+	<option *ngFor="let option of Option" value={{option.value}} >
+		{{option.name}}
+	</option>
+</select>
