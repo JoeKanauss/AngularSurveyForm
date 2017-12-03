@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { options } from '../options';
+@Component({
+  selector: 'app-option-select',
+  templateUrl: './option-select.component.html',
+  styleUrls: ['./option-select.component.css']
+})
+export class OptionSelectComponent implements OnInit {
+	
+  Option: options[] =[ {optionValue: 0, optionName:'1. Best time'},
+					 {optionValue: 1, optionName:'2. Next Best time'},
+					 {optionValue: 2, optionName:'3. Not as good'},
+					 {optionValue: 3, optionName:'4. Worst time'} ];
+	
+  public removeOption(event): void{
+		var toRemove = event.target.value;
+		alert(Option.findIndex(Option.value == 1));
+	}
+	
+  constructor() { }
+  
+  ngOnInit() {
+  }
+
+}

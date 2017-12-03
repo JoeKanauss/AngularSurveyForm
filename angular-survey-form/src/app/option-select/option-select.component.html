@@ -1,5 +1,5 @@
-<select id="dropdown" (change)="removeOption()">
-	<option *ngFor="let option of Option" value={{option.value}} >
-		{{option.name}}
+<select (change)="removeOption(event, optionArray)">
+	<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
+	{{optionItem}}
 	</option>
 </select>
