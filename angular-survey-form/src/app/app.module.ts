@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {SelectModule} from 'angular2-select';
 
 import { AppComponent } from './app.component';
 import { OptionSelectComponent } from './option-select/option-select.component';
+
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { OptionSelectComponent } from './option-select/option-select.component';
     OptionSelectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

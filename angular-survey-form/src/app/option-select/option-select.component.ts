@@ -12,11 +12,22 @@ export class OptionSelectComponent implements OnInit {
 				"3. Not as good",
 				"4. Worst time"];
 
- public removeOption($event, optionArray: string[]){
-		var toRemove = event.target.value;
+ public removeOption($event, optionArray: string[], usedOptions: string[]){
+		var toRemove: number = $event.target.value;
+		var className: string = $event.target.className;
+		alert(className);
 		alert("Index to Remove: " + toRemove);
-		optionArray.splice(optionArray[toRemove],1);
+		alert("Array Item: " + optionArray[toRemove]);
+		document.getElementById(className).innerHTML = optionArray[toRemove];
+		optionArray.splice(toRemove, 1);
+
 	}
+	
+	
+public resetOptions(optionArray){
+	
+	window.location.reload();
+}
 	
   constructor() {
 
@@ -24,5 +35,4 @@ export class OptionSelectComponent implements OnInit {
   
   ngOnInit() {
   }
-
 }

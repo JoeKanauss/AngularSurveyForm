@@ -1,5 +1,52 @@
-<select (change)="removeOption(event, optionArray)">
-	<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
-	{{optionItem}}
-	</option>
-</select>
+
+<form name="form1" method="post" action="">
+  <fieldset>
+      <p>
+        <label>Email:
+          <input type="text" name="cust_email" id="cust_email">
+        </label>
+      </p>
+      <p>Please rate the following times from best (1) to worst (4)</p>
+      <p>
+			<select class="one"(change)="removeOption($event, optionArray)">
+				<option value="default">Select a Time</option>
+				<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
+				{{optionItem}}
+				</option>
+			</select>
+      		Monday/Wednesday 10:10am-Noon <span id="one"></span>
+      </p>
+      <p>
+      		<select class="two" (change)="removeOption($event, optionArray)">
+				<option value="default">Select a Time</option>
+				<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
+				{{optionItem}}
+				</option>
+			</select>   
+      		Tuesday 6:00pm-9:00pm <span id="two"></span>
+      </p>
+      <p>
+       		 <select class="three" (change)="removeOption($event, optionArray)">
+				<option value="default">Select a Time</option>
+				<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
+				{{optionItem}}
+				</option>
+			</select>  
+      		Wednesday 6:00pm-9:00pm <span id="three"></span>
+      </p>
+      <p>
+			 <select class="four" (change)="removeOption($event, optionArray)">
+				<option value="default">Select a Time</option>
+				<option *ngFor="let optionItem of optionArray, let i = index"  value={{i}} >
+				{{optionItem}}
+				</option>
+			</select> 
+      		Tuesday/Thursday 10:10am-Noon <span id="four"></span>
+      </p>
+      <p>
+        <input type="submit" name="button" id="button" value="Submit">
+        <input type="reset" name="button2" id="button2" value="Reset" (click)="resetOptions();">
+      </p>
+  </fieldset>  
+</form>
+<p>&nbsp;</p>
